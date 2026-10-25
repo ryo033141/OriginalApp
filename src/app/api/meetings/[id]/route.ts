@@ -1120,18 +1120,6 @@ export async function DELETE(
             );
         }
 
-        // ログインユーザーが主催者本人か確認する
-        if(existtingMeeting.organizer_id !== organizer.id) {
-            return NextResponse.json(
-                {
-                    error: "この会議を削除する権限がありません",
-                },
-                {
-                    status: 403,
-                }
-            );
-        }
-
         // Meetingと参加者をTransactionで削除する
         await prisma.$transaction(
             async(tx) => {
