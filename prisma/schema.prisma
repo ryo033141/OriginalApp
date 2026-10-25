@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AttendanceType {
+  required
+  optional
+}
+
+enum MeetingAction {
+  create
+  update
+  delete
+}
+
+model Employee {
+  id Int @id
+  name String @db.VarChar(20)
+  email String @unique @db.VarChar(255)
+  admin_flag Boolean @default(false)
+  auth_user_id String? @unique @db.Uuid
+  department_id Int
+  position_id Int
+  employee_status_id Int
+  enrollment_status_id Int
+  department Department @relation(fields: [department_id], references: [id])
+  employmentstatus EmploymentStatus @relation(fields: [employee_status_id], references: [id])
+  enrollmentstatus EnrollmentStatus @relation(fields: [enrollment_status_id], references: [id])
+  position Position @relation(fields: [position_id], references: [id])
+  MeetingParticipants MeetingParticipant[]
+  organizedMeetings Meeting[] @relation("MeetingOrganizer")
+  meetingActivities MeetingActivity[]
+}
+
+model MeetingParticipant {
+  id Int @id @default(autoincrement())
+  attendance_type AttendanceType
+  employee_id Int
+  meeting_id  Int
+  employee Employee @relation(fields: [employee_id], references: [id])
+  meeting Meeting @relation(fields: [meeting_id], references: [id])
+  @@unique([employee_id,meeting_id])
+}
+
+model Meeting {
+  id Int @id @default(autoincrement())
+  organizer_id Int
+  title String @db.VarChar(30)
+  place String @db.VarChar(20)
+  start_datetime DateTime
+  end_datetime DateTime
+  description String?
+  organizer Employee @relation("MeetingOrganizer", fields: [organizer_id],references: [id])
+  MeetingParticipants MeetingParticipant[]
+  activities MeetingActivity[]
+}
+
+model MeetingActivity {
+  id Int @id @default(autoincrement())
+  employee_id Int?
+  meeting_id Int?
+  old_meeting_title String? @db.VarChar(30)
+  meeting_title String @db.VarChar(30)
+  employee_name String? @db.VarChar(20)
+  organizer_name String? @db.VarChar(20)
+  action MeetingAction
+  created_at DateTime @default(now())
+  activity_group_id String? @db.Uuid
+  notification_employee_ids Int[] @default([])
+  employee Employee? @relation(fields: [employee_id],references: [id],onDelete: SetNull)
+  meeting Meeting? @relation(fields: [meeting_id],references: [id],onDelete: SetNull)
+}
+
+model Department {
+  id Int @id @default(autoincrement())
+  department_name String @db.VarChar(20)
+  employees Employee[]
+}
+
+model Position {
+  id Int @id @default(autoincrement())
+  position_name String @db.VarChar(20)
+  employees Employee[]
+}
+
+model EmploymentStatus {
+  id Int @id @default(autoincrement())
+  employee_status String @db.VarChar(20)
+  employees Employee[]
+}
+
+model EnrollmentStatus {
+  id Int @id @default(autoincrement())
+  enrollment_status String @db.VarChar(20)
+  employees Employee[]
+}
