@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 会議ポータル
+## アプリ概要
+OutlookやGoogle Meetsなどの一般的な会議作成アプリはありますが作成された会議を見るには
+<br/>
+カレンダーを確認する必要があり、確認する手間を感じたり自分が関係する会議をうっかり失念して
+<br>
+しまうという課題を感じておりました。
 
-## Getting Started
+この課題を解決するために自分に関係がある会議のみを一覧表示する掲示板アプリを開発いたしました。
+<br/>
+このアプリを利用する事で自分に関係がある会議が一目でわかるので会議をうっかり忘れてしまうという
+<br/>
+懸念が軽減できるのではないかと考えております。
 
-First, run the development server:
+またこのアプリは社内で使用する想定をしており、管理者機能で社員情報の管理ができ、在籍している
+<br/>
+社員のみに会議作成や通知、会議の一覧表示ができるような仕様になっております。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## デモ
+公開用URL：https://original-app-ebon.vercel.app/signin
