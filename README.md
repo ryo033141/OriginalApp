@@ -18,3 +18,15 @@ OutlookやGoogle Meetsなどの一般的な会議作成アプリはあります�
 
 ## デモ
 公開用URL：https://original-app-ebon.vercel.app/signin
+
+## ER図
+<img width="982" height="867" alt="オリジナルアプリ_ER図" src="https://github.com/user-attachments/assets/fb270bc8-6b74-4334-959b-03c8997232b6" />
+
+## 使用技術
+- **フロントエンド：** Next.js 16.2.9、React 19.2.4、TypeScript
+- **CSSフレームワーク：** Tailwind CSS
+- **バックエンド：** Next.js Route Handlers
+- **データベース：** Prisma、Supabase
+- **アイコン：** Font Awesome
+- **通知機能：** React Hot Toast
+- **デプロイ：** Vercel
