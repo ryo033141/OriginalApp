@@ -43,9 +43,11 @@ OutlookやGoogle Meetsなどの一般的な会議作成アプリはあります�
   できないようにした点
 - 会議登録をする際に在籍している社員のみ会議登録可能とし、在籍していない<br/>
   社員がいたら登録を不可にしたり、元々在籍していて、その後在籍しなくなった<br/>
-  場合は会議の参加者から削除するように実装した事
+  場合は会議の参加者から削除するように実装した点
+- 会議が終了した会議については24時関経過後、自動的に一覧から非表示にし、開催予定の会議のみ一覧で<br/>
+  見れるようにした点
 - React Hot Toastを利用して、ログインした人自身に向けて会議が作成されたり<br/>
-  編集されたりした場合はリアルタイムに近い形で通知が出るようにした事
+  編集されたりした場合はリアルタイムに近い形で通知が出るようにした点
 
 ## ER図
 <img width="982" height="867" alt="オリジナルアプリ_ER図" src="https://github.com/user-attachments/assets/fb270bc8-6b74-4334-959b-03c8997232b6" />
@@ -160,8 +162,38 @@ OutlookやGoogle Meetsなどの一般的な会議作成アプリはあります�
 
 ## ローカルでの実行方法
 ```
-git clone https://github.com/ユーザー名/リポジトリ名.git
+git clone https://github.com/ryo033141/OriginalApp.git
+cd OriginalApp
+npm install
 ```
+プロジェクト配下に```.env.local```を作成し、Supabase接続用の以下の項目を<br/>
+設定します。
+```
+DATABASE_URL=your_database_url
+DIRECT_URL=your_direct_url
+
+SUPABASE_URL=your_supabase_url
+SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+
+NEXT_PUBLIC_SUPABASE_URL=your_next_public_supabase_url
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_next_public_supabase_publishable_key
+```
+設定後、以下を実行します。
+```
+npm run dev
+```
+ブラウザで```http://localhost:3000```を開きます。
+
+## 画面イメージ
+### トップ画面
+<img width="1440" height="776" alt="“0” 2026-10-29 0 11 35" src="https://github.com/user-attachments/assets/7b66fa6b-b913-4884-b434-f92083d36a12" />
+
+### 会議一覧画面
+<img width="1438" height="773" alt="“0” 2026-10-29 0 22 30" src="https://github.com/user-attachments/assets/876b2739-a63e-4628-af2d-79866d9a8fc5" />
+
+### 社員一覧画面（管理者側）
+<img width="1440" height="777" alt="“0” 2026-10-29 0 24 56" src="https://github.com/user-attachments/assets/2ef4520d-f99d-460f-9bc2-905ed72b1d42" />
 
 ## デモ
 公開用URL：https://original-app-ebon.vercel.app/signin
