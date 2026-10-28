@@ -16,6 +16,30 @@ OutlookやGoogle Meetsなどの一般的な会議作成アプリはあります�
 <br/>
 社員のみに会議作成や通知、会議の一覧表示ができるような仕様になっております。
 
+## デモ
+公開用URL：https://original-app-ebon.vercel.app/signin
+
+## デモアカウント
+### デモユーザー1（ユーザー側）
+- 社員番号：124542
+- パスワード：re3141592
+#### 会議登録可能なメールアドレス一覧
+- yamaguchi@example.com
+- aoyama@example.com
+- sato@example.com
+- hamano@example.com
+
+## デモユーザー2（管理者側）
+- 社員番号：234252
+- パスワード：re3141592
+#### 管理者権限付与が可能な社員
+- 青山智
+- 佐藤佳菜子
+
+## 新規会員登録が可能な社員番号
+- 432421
+- 725321
+
 ## 使用技術
 - フロントエンド：Next.js 16.2.9、React 19.2.4、TypeScript
 - CSSフレームワーク：TailWind CSS
@@ -158,7 +182,7 @@ OutlookやGoogle Meetsなどの一般的な会議作成アプリはあります�
 ```
 
 ## 動作確認環境
-- Mac / Google Chorme / Safariで動作確認済み
+Mac / Google Chorme / Safariで動作確認済み
 
 ## ローカルでの実行方法
 ```
@@ -194,9 +218,6 @@ npm run dev
 
 ### 社員一覧画面（管理者側）
 <img width="1440" height="777" alt="“0” 2026-10-29 0 24 56" src="https://github.com/user-attachments/assets/2ef4520d-f99d-460f-9bc2-905ed72b1d42" />
-
-## デモ
-公開用URL：https://original-app-ebon.vercel.app/signin
 
 
 
