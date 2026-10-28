@@ -50,6 +50,119 @@ OutlookやGoogle Meetsなどの一般的な会議作成アプリはあります�
 ## ER図
 <img width="982" height="867" alt="オリジナルアプリ_ER図" src="https://github.com/user-attachments/assets/fb270bc8-6b74-4334-959b-03c8997232b6" />
 
+## ファイル構成
+```
+├── AGENTS.md
+├── CLAUDE.md
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── prisma
+│   ├── migrations
+│   ├── migrations_backup
+│   └── schema.prisma
+├── prisma.config.ts
+├── public
+│   └── image
+│       ├── back_icon.png
+│       ├── detail.png
+│       └── signout_icon.png
+├── README.md
+├── skills-lock.json
+├── src
+│   ├── app
+│   │   ├── api
+│   │   │   ├── auth
+│   │   │   │   └── employee-status
+│   │   │   │       └── route.ts
+│   │   │   ├── employees
+│   │   │   │   ├── [id]
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── admin
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── route.ts
+│   │   │   ├── EmployeeSelection
+│   │   │   │   └── route.ts
+│   │   │   ├── logout
+│   │   │   │   └── route.ts
+│   │   │   ├── me
+│   │   │   │   └── route.ts
+│   │   │   ├── MeetingActivities
+│   │   │   │   └── route.ts
+│   │   │   ├── meetings
+│   │   │   │   ├── [id]
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── route.ts
+│   │   │   ├── signin
+│   │   │   │   ├── admin
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── route.ts
+│   │   │   └── signup
+│   │   │       └── route.ts
+│   │   ├── employee
+│   │   │   ├── [id]
+│   │   │   │   ├── delete
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── edit
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── page.tsx
+│   │   │   ├── admin
+│   │   │   │   └── page.tsx
+│   │   │   ├── create
+│   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── meeting
+│   │   │   ├── [id]
+│   │   │   │   ├── delete
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── edit
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── page.tsx
+│   │   │   ├── create
+│   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── page.tsx
+│   │   ├── signin
+│   │   │   ├── admin
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   └── signup
+│   │       └── page.tsx
+│   ├── components
+│   │   ├── EmployeeDeletionWatcher.tsx
+│   │   └── Header.tsx
+│   ├── lib
+│   │   └── supabase
+│   │       └── proxy.ts
+│   └── proxy.ts
+├── tsconfig.json
+└── utils
+    ├── checkAdminPermission.ts
+    ├── dateTime.ts
+    ├── prisma.ts
+    ├── supabase
+    │   ├── admin.ts
+    │   ├── client.ts
+    │   └── server.ts
+    └── validation
+        └── signup.ts
+```
+
+## 動作確認環境
+- Mac / Google Chorme / Safariで動作確認済み
+
+## ローカルでの実行方法
+```
+git clone https://github.com/ユーザー名/リポジトリ名.git
+```
+
 ## デモ
 公開用URL：https://original-app-ebon.vercel.app/signin
 
